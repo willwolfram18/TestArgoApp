@@ -8,4 +8,4 @@ bases:
 images:
   - name: test-webapi
     newName: willwolfram18/test-argo-app
-    newTag: 0.1.0.3
+    newTag: 0.1.0.4

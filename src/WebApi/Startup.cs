@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Hellang.Middleware.ProblemDetails;
 
 namespace TestArgoApp.WebApi
 {
@@ -50,12 +51,15 @@ namespace TestArgoApp.WebApi
 
             services.AddWeatherServices()
                 .AddWeatherForecastRepository();
+
+            services.AddProblemDetails();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UsePathBase(Configuration.GetValue<string>("ASPNETCORE_APPL_PATH"));
+            app.UseProblemDetails();
 
             if (env.IsDevelopment())
             {
