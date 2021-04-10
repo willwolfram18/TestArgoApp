@@ -1,0 +1,4 @@
+# TestArgoApp.WebApi.Tests.PseudoIntegration
+> Pseudo-integration tests for the application's web API.
+
+The `TestArgoApp.WebApi.Tests.PseudoIntegration` project is intended to build off of [Microsoft's integration test tools for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-5.0), which can spin up an ASP.NET Core application for in memory testing. Similar to a traditional integration test, these tests are intended to validate the web API as if it were deployed and running. However, these tests differ from typical integration tests in that the `WebApplicationFactory<TStartup>` allow us to swap out low-level details during test execution, removing the need to directly rely on external systems. Hence the name, "pseudo-integration": they are integration in nature, without truly integrating with those systems.
