@@ -55,6 +55,8 @@ namespace TestArgoApp.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UsePathBase(Configuration.GetValue<string>("ASPNETCORE_APPL_PATH"));
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

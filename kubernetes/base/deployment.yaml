@@ -15,6 +15,9 @@ spec:
       containers:
       - name: test-webapi
         image: willwolfram18/test-argo-app:0.1.0.2
+        env:
+          - name: ASPNETCORE_APPL_PATH
+            value: /sample-app
         resources:
           limits:
             memory: "128Mi"
